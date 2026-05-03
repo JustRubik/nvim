@@ -41,4 +41,15 @@ vim.keymap.set("n", "<A-l>", ":vertical resize +1<CR>")
 vim.keymap.set("n", "<A-k>", ":resize +1<CR>")
 vim.keymap.set("n", "<A-j>", ":resize -1<CR>")
 
+-- Kiểm tra nếu đang chạy trên Windows
+if vim.fn.has("win32") == 1 then
+    -- Ưu tiên pwsh (PowerShell Core) nếu có, nếu không thì dùng powershell mặc định
+    local powershell_exe = vim.fn.executable("pwsh") == 1 and "pwsh" or "powershell"
 
+    vim.opt.shell = powershell_exe
+    vim.opt.shellcmdflag = "-NoLogo -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
+    vim.opt.shellredir = "2>&1 | Out-File -Encoding UTF8 %s"
+    vim.opt.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s"
+    vim.opt.shellquote = ""
+    vim.opt.shellxquote = ""
+end

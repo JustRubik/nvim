@@ -13,7 +13,7 @@ return {
                 term_win = nil
             else
                 vim.cmd("botright vsplit") -- Mở ở dưới cùng
-                vim.cmd("vertical resize 25") -- Chiều rộng terminal là 20
+                vim.cmd("vertical resize 30") -- Chiều rộng terminal là 20
                 if term_buf and vim.api.nvim_buf_is_valid(term_buf) then
                     vim.api.nvim_set_current_buf(term_buf)
                 else
