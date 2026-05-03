@@ -9,6 +9,9 @@ return {
     config = function ()
         vim.keymap.set("n", "<leader>v", ":Neotree filesystem toggle left<CR>", {})
         require("neo-tree").setup({
+          window = {
+               width = 25,
+          },
           filesystem = {
             filtered_items = {
               visible = true,  -- Hiện file ẩn

@@ -12,8 +12,8 @@ return {
                 vim.api.nvim_win_hide(term_win)
                 term_win = nil
             else
-                vim.cmd("botright vsplit") -- Mở ở dưới cùng
-                vim.cmd("vertical resize 30") -- Chiều rộng terminal là 20
+                vim.cmd("botright vsplit") -- Mở ở bên phải 
+                vim.cmd("vertical resize 30") -- Chiều rộng terminal là 30
                 if term_buf and vim.api.nvim_buf_is_valid(term_buf) then
                     vim.api.nvim_set_current_buf(term_buf)
                 else
