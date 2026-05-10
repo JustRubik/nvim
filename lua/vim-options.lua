@@ -53,3 +53,12 @@ if vim.fn.has("win32") == 1 then
     vim.opt.shellquote = ""
     vim.opt.shellxquote = ""
 end
+
+-- start barbar config
+-- next/prev buffer
+vim.keymap.set("n", "<S-l>", "<Cmd>BufferNext<CR>")
+vim.keymap.set("n", "<S-h>", "<Cmd>BufferPrevious<CR>")
+
+-- close buffer
+vim.keymap.set("n", "<leader>q", "<Cmd>BufferClose<CR>")
+-- end barbar config
