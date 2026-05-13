@@ -1,7 +1,7 @@
 vim.cmd("set expandtab")
-vim.cmd("set tabstop=4")
-vim.cmd("set softtabstop=4")
-vim.cmd("set shiftwidth=4")
+vim.cmd("set tabstop=2")
+vim.cmd("set softtabstop=2")
+vim.cmd("set shiftwidth=2")
 vim.g.mapleader = " "
 vim.cmd("set number")
 vim.cmd("set relativenumber")
@@ -54,6 +54,7 @@ if vim.fn.has("win32") == 1 then
     vim.opt.shellxquote = ""
 end
 
+
 -- start barbar config
 -- next/prev buffer
 vim.keymap.set("n", "<S-l>", "<Cmd>BufferNext<CR>")
@@ -62,3 +63,5 @@ vim.keymap.set("n", "<S-h>", "<Cmd>BufferPrevious<CR>")
 -- close buffer
 vim.keymap.set("n", "<leader>q", "<Cmd>BufferClose<CR>")
 -- end barbar config
+
+vim.keymap.set("n", "<leader>vt", ":ShowTree<CR>", { desc = "Show directory tree in floating window" })
