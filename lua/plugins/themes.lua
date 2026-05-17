@@ -1,13 +1,13 @@
 return {
 	{
-		"folke/tokyonight.nvim",
-		name = "tokyonight",
-		priority = 999,
+		"alligator/accent.vim",
+		name = "accent",
+	  priority = 999,
 		config = function()
 			-- Set default theme
 			local themes = {
-				"tokyonight", -- for recording
 				"accent", -- this guy is for my eyes
+				"tokyonight", -- for recording
 				"catppuccin", -- for recording
 				"rose-pine", -- for fun
 			}
@@ -38,8 +38,8 @@ return {
 		priority = 1000,
 	},
 	{
-		"alligator/accent.vim",
-		name = "accent",
+	  "folke/tokyonight.nvim",
+		name = "tokyonight",
 		priority = 1100,
 	},
 }
