@@ -11,9 +11,11 @@ return {
 				"catppuccin", -- for recording
 				"rose-pine", -- for fun
 			}
-            local current_theme_index = 1
-            -- Set default theme (first theme)
-            vim.cmd.colorscheme(themes[current_theme_index])
+      
+      local current_theme_index = 1
+      -- Set default theme (first theme)
+      vim.cmd.colorscheme(themes[current_theme_index])
+      vim.api.nvim_set_hl(0, "Comment", { fg = "#a0a0a0" })
 
 			-- Key mapping to switch themes (e.g., <leader>nt)
 			vim.keymap.set("n", "<leader>nt", function()
