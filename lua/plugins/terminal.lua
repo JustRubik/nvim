@@ -29,5 +29,7 @@ return {
         vim.keymap.set({ 'n', 't' }, '<C-t><C-t>', '<CMD>lua ToggleTerminal()<CR>', { noremap = true })
         vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], {})
         vim.keymap.set('t', '<C-t>t', [[<C-\><C-n>:q!<CR>]], {})
+        vim.keymap.set({'n', 't'}, '<C-t><C-h>', '<CMD>:term pwsh<CR>', {}) -- Trong trường hợp dùng windows
+        vim.keymap.set({'n', 't'}, '<C-t><C-j>', '<CMD>:term zsh<CR>', {}) -- Trong trường hợp dùng linux
     end
 }
