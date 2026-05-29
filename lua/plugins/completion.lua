@@ -64,6 +64,8 @@ return {
 					{ name = "pylsp" },
 					{ name = "ts_ls" },
 					{ name = "gopls" },
+					{ name = "clangd" },
+          { name = "cmake" },
 				}),
 			})
 		end,

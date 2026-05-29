@@ -130,9 +130,15 @@ return {
 
       -- clang
 			lspconfig['clangd'] = {
+        -- cmd = { "clangd" },
 				capabilities = capabilities,
 			}
             vim.lsp.enable("clangd")
+      -- cmake
+      lspconfig['cmake'] = {
+        capabilities = capabilities,
+      }
+            vim.lsp.enable("cmake")
 
 			-- lsp kepmap setting
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
@@ -153,6 +159,8 @@ return {
 					java = "class",
 					lua = "function",
 					go = { "method", "struct", "interface" },
+          cpp = { "function", "struct", "namespace" },
+          c = { "function", "struct" },
 				}
 				local symbols = symbols_map[filetype] or "function"
 				require("fzf-lua").lsp_document_symbols({ symbols = symbols })
