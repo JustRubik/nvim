@@ -12,7 +12,7 @@ return {
 				"rose-pine", -- for fun
 			}
       
-      local current_theme_index = 1
+      local current_theme_index = 2
       -- Set default theme (first theme)
       vim.cmd.colorscheme(themes[current_theme_index])
       vim.api.nvim_set_hl(0, "Comment", { fg = "#a0a0a0" })

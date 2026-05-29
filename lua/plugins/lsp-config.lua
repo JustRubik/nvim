@@ -55,18 +55,18 @@ return {
 			}
             vim.lsp.enable("eslint")
 
-			-- zig
-			lspconfig['zls'] = {
-				capabilities = capabilities,
-			}
-            vim.lsp.enable("zls")
-
-			-- yaml
-			lspconfig['yamlls'] = {
-				capabilities = capabilities,
-			}
-            vim.lsp.enable("yamlls")
-
+			-- -- zig
+			-- lspconfig['zls'] = {
+			-- 	capabilities = capabilities,
+			-- }
+			--          vim.lsp.enable("zls")
+			--
+			-- -- yaml
+			-- lspconfig['yamlls'] = {
+			-- 	capabilities = capabilities,
+			-- }
+			--          vim.lsp.enable("yamlls")
+			--
 			-- tailwindcss
 			--lspconfig['tailwindcss'] = {
 			--	capabilities = capabilities,
@@ -97,20 +97,20 @@ return {
 			-- })
 
 			-- nix
-			lspconfig['rnix'] = { 
-                capabilities = capabilities,
-            }
-            vim.lsp.enable("rnix")
-
+			-- lspconfig['rnix'] = { 
+			--              capabilities = capabilities,
+			--          }
+			--          vim.lsp.enable("rnix")
+			--
 			-- protocol buffer
 			--lspconfig.buf_ls.setup({ capabilities = capabilities })
 
 			-- docker compose
-			lspconfig['docker_compose_language_service'] = { 
-                capabilities = capabilities,
-            }
-            vim.lsp.enable("docker_compose_language_service")
-
+			-- lspconfig['docker_compose_language_service'] = { 
+			--              capabilities = capabilities,
+			--          }
+			--          vim.lsp.enable("docker_compose_language_service")
+			--
 			-- svelte
 			--lspconfig['svelte'] = { 
             --    capabilities = capabilities,
@@ -128,7 +128,7 @@ return {
             }
             vim.lsp.enable("bashls")
 
-            -- clang
+      -- clang
 			lspconfig['clangd'] = {
 				capabilities = capabilities,
 			}
