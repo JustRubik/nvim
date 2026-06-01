@@ -66,3 +66,7 @@ vim.keymap.set({ "n", "t" }, "<C-t>q", "<CMD>:BufferClose!<CR>", {})
 -- end barbar config
 
 vim.keymap.set("n", "<leader>vt", ":ShowTree<CR>", { desc = "Show directory tree in floating window" })
+
+
+
+vim.keymap.set("n", "<leader>xx", ":q<CR>", {})
