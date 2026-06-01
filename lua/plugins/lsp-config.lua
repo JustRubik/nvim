@@ -139,7 +139,11 @@ return {
         capabilities = capabilities,
       }
             vim.lsp.enable("cmake")
-
+      -- marksman
+      lspconfig['marksman'] = {
+        capabilities = capabilities,
+      }
+            vim.lsp.enable("marksman")
 			-- lsp kepmap setting
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {})
