@@ -144,6 +144,12 @@ return {
         capabilities = capabilities,
       }
             vim.lsp.enable("marksman")
+      -- assembly
+      lspconfig['asm-lsp'] = {
+        capabilities = capabilities,
+      }
+            vim.lsp.enable("asm-lsp")
+
 			-- lsp kepmap setting
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {})
