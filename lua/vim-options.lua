@@ -62,6 +62,7 @@ vim.keymap.set("n", "<S-h>", "<Cmd>BufferPrevious<CR>")
 
 -- close buffer
 vim.keymap.set("n", "<leader>q", "<Cmd>BufferClose<CR>")
+vim.keymap.set("n", "<leader>wer", "<Cmd>BufferClose<CR>")
 vim.keymap.set({ "n", "t" }, "<C-t>q", "<CMD>:BufferClose!<CR>", {})
 -- end barbar config
 
