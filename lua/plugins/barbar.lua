@@ -11,6 +11,14 @@ return {
       auto_hide = false,
       tabpages = true,
       clickable = true,
+      preset = 'powerline',
+      -- highlight_current_file_icons = false,
+      icons = {
+        filetype = { custom_color = true, },
+        separator = { left = '', right = '' },
+        separator_at_end = false,
+        inactive = { separator = { left = '', right = '' } },
+      },
       -- insert_at_start = true,
       -- …etc.
     },
