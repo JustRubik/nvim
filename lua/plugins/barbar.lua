@@ -13,9 +13,9 @@ return {
       clickable = true,
       preset = 'powerline',
       highlight_current_file_icons = false,
-      -- highlight_inactive_file_icons = false,
+      highlight_inactive_file_icons = false,
       icons = {
-        filetype = { custom_color = true, },
+        filetype = { custom_colors = false, },
         separator = { left = '', right = '' },
         separator_at_end = false,
         inactive = { separator = { left = '', right = '' } },
