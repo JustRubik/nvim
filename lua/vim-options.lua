@@ -8,7 +8,7 @@ vim.cmd("set relativenumber")
 vim.cmd("set cursorline")
 vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "white" })
 vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#ead84e" })
-vim.api.nvim_set_option("clipboard", "unnamed")
+vim.api.nvim_set_option("clipboard", "unnamedplus")
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 -- move selected lines
