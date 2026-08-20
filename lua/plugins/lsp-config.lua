@@ -34,7 +34,7 @@ return {
 						workspace = {
 							library = {
                               vim.api.nvim_get_runtime_file("", true),
-                              vim.fn.expand("~/.local/share/lua/love2d"),
+                              vim.fn.expand("~/.local/share/love2d"),
                           },
 							checkThirdParty = false,
 						},
