@@ -37,7 +37,7 @@ return {
 	{
 		"rose-pine/neovim",
 		name = "rose-pine",
-		priority = 1000,
+		priority = 1001,
 	},
 	{
 	  "folke/tokyonight.nvim",

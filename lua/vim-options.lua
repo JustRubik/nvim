@@ -11,6 +11,14 @@ vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#ead84e" })
 vim.api.nvim_set_option("clipboard", "unnamedplus")
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = {"markdown", "html", "typst", "asciidoc"},
+    callback = function()
+        vim.opt_local.wrap = false
+    end,
+})
+
 -- move selected lines
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
