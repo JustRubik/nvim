@@ -1,41 +1,41 @@
 return {
-  {
-    "williamboman/mason.nvim",
-    config = function () 
-      require("mason").setup()
-    end,
-  },
-  {
-    "williamboman/mason-lspconfig.nvim",
-    config = function ()
-      require("mason-lspconfig").setup {
-        ensure_installed = {"lua_ls"},
-      }
-    end,
-  },
-  {
+	{
+		"williamboman/mason.nvim",
+		config = function()
+			require("mason").setup({ PATH = "prepend" })
+		end,
+	},
+	{
+		"williamboman/mason-lspconfig.nvim",
+		config = function()
+			require("mason-lspconfig").setup({
+				ensure_installed = { "lua_ls" },
+			})
+		end,
+	},
+	{
 		"neovim/nvim-lspconfig",
 		lazy = false,
 		config = function()
-            --local lspconfig = require("lspconfig")
-            local lspconfig = vim.lsp.config
+			--local lspconfig = require("lspconfig")
+			local lspconfig = vim.lsp.config
 			-- lua
-			lspconfig['lua_ls'] = {
+			lspconfig["lua_ls"] = {
 				cmd = { "lua-language-server" },
 				capabilities = capabilities,
 				settings = {
 					Lua = {
-                        runtime = {
-                            version = 'LuaJIT',
-                        },
+						runtime = {
+							version = "LuaJIT",
+						},
 						diagnostics = {
 							globals = { "vim", "love" },
 						},
 						workspace = {
 							library = {
-                              vim.api.nvim_get_runtime_file("", true),
-                              vim.fn.expand("~/.local/share/love2d"),
-                          },
+								vim.api.nvim_get_runtime_file("", true),
+								vim.fn.expand("~/.local/share/love2d"),
+							},
 							checkThirdParty = false,
 						},
 						telemetry = {
@@ -44,19 +44,19 @@ return {
 					},
 				},
 			}
-            vim.lsp.enable("lua_ls")
+			vim.lsp.enable("lua_ls")
 
 			-- typescript
-		    lspconfig['ts_ls'] = {
+			lspconfig["ts_ls"] = {
 				capabilities = capabilities,
 			}
-            vim.lsp.enable("ts_ls")
+			vim.lsp.enable("ts_ls")
 
 			-- Js
-			lspconfig['eslint'] = {
+			lspconfig["eslint"] = {
 				capabilities = capabilities,
 			}
-            vim.lsp.enable("eslint")
+			vim.lsp.enable("eslint")
 
 			-- -- zig
 			-- lspconfig['zls'] = {
@@ -74,13 +74,13 @@ return {
 			--lspconfig['tailwindcss'] = {
 			--	capabilities = capabilities,
 			--}
-            --vim.lsp.enable("tailwindcss")
+			--vim.lsp.enable("tailwindcss")
 
 			-- golang
-			lspconfig['gopls'] = {
+			lspconfig["gopls"] = {
 				capabilities = capabilities,
 			}
-            vim.lsp.enable("gopls")
+			vim.lsp.enable("gopls")
 
 			--java
 			-- lspconfig.jdtls.setup({
@@ -100,7 +100,7 @@ return {
 			-- })
 
 			-- nix
-			-- lspconfig['rnix'] = { 
+			-- lspconfig['rnix'] = {
 			--              capabilities = capabilities,
 			--          }
 			--          vim.lsp.enable("rnix")
@@ -109,49 +109,49 @@ return {
 			--lspconfig.buf_ls.setup({ capabilities = capabilities })
 
 			-- docker compose
-			-- lspconfig['docker_compose_language_service'] = { 
+			-- lspconfig['docker_compose_language_service'] = {
 			--              capabilities = capabilities,
 			--          }
 			--          vim.lsp.enable("docker_compose_language_service")
 			--
 			-- svelte
-			--lspconfig['svelte'] = { 
-            --    capabilities = capabilities,
-            --}
+			--lspconfig['svelte'] = {
+			--    capabilities = capabilities,
+			--}
 
 			-- python
-			lspconfig['pylsp'] = { 
-                capabilities = capabilities, 
-            }
-            vim.lsp.enable("pylsp")
-
-			-- bash
-			lspconfig['bashls'] = { 
-                capabilities = capabilities 
-            }
-            vim.lsp.enable("bashls")
-
-      -- clang
-			lspconfig['clangd'] = {
-        -- cmd = { "clangd" },
+			lspconfig["pylsp"] = {
 				capabilities = capabilities,
 			}
-            vim.lsp.enable("clangd")
-      -- cmake
-      lspconfig['cmake'] = {
-        capabilities = capabilities,
-      }
-            vim.lsp.enable("cmake")
-      -- marksman
-      lspconfig['marksman'] = {
-        capabilities = capabilities,
-      }
-            vim.lsp.enable("marksman")
-      -- assembly
-      lspconfig['asm-lsp'] = {
-        capabilities = capabilities,
-      }
-            vim.lsp.enable("asm-lsp")
+			vim.lsp.enable("pylsp")
+
+			-- bash
+			lspconfig["bashls"] = {
+				capabilities = capabilities,
+			}
+			vim.lsp.enable("bashls")
+
+			-- clang
+			lspconfig["clangd"] = {
+				-- cmd = { "clangd" },
+				capabilities = capabilities,
+			}
+			vim.lsp.enable("clangd")
+			-- cmake
+			lspconfig["cmake"] = {
+				capabilities = capabilities,
+			}
+			vim.lsp.enable("cmake")
+			-- marksman
+			lspconfig["marksman"] = {
+				capabilities = capabilities,
+			}
+			vim.lsp.enable("marksman")
+			-- assembly
+			lspconfig["asm-lsp"] = {
+				capabilities = capabilities,
+			}
+			vim.lsp.enable("asm-lsp")
 
 			-- lsp kepmap setting
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
@@ -172,8 +172,8 @@ return {
 					java = "class",
 					lua = "function",
 					go = { "method", "struct", "interface" },
-          cpp = { "function", "struct", "namespace" },
-          c = { "function", "struct" },
+					cpp = { "function", "struct", "namespace" },
+					c = { "function", "struct" },
 				}
 				local symbols = symbols_map[filetype] or "function"
 				require("fzf-lua").lsp_document_symbols({ symbols = symbols })
