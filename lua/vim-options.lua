@@ -26,6 +26,12 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("x", "<leader>p", '"_dP')
 -- vim.opt.colorcolumn = "94"
 vim.opt.clipboard = "unnamedplus"
+
+-- floating errors
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
+vim.keymap.set("n", "<leader>pe", vim.diagnostic.goto_prev)
+vim.keymap.set("n", "<leader>ne", vim.diagnostic.goto_next)
+
 -- fk llm-ls
 local notify_original = vim.notify
 vim.notify = function(msg, ...)
