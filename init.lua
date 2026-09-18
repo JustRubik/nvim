@@ -21,3 +21,5 @@ require("lazy").setup("plugins")
 --local uname = vim.loop.os_uname()
 --require("lazy").setup("plugins", lazy_opts)
 --require("snipets")
+
+lang_switch = require("vim-helpers.lang-switch").setup()
