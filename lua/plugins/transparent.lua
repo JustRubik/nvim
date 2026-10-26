@@ -23,6 +23,7 @@ return {
 		require("transparent").clear_prefix("StatusLine")
 		require("transparent").clear_prefix("Buffer")
 		require("transparent").clear_prefix("TabLine")
+		require("transparent").clear_prefix("DevIcon")
 
 		-- depends on pc, these settings are needed
         vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
