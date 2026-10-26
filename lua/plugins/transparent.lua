@@ -1,5 +1,8 @@
 return {
 	"xiyaowong/transparent.nvim",
+  dependencies = {
+    "romgrk/barbar.nvim",
+  },
 	config = function()
 		require("transparent").setup({
 			enable = true,
@@ -23,10 +26,10 @@ return {
 		require("transparent").clear_prefix("StatusLine")
 		require("transparent").clear_prefix("Buffer")
 		require("transparent").clear_prefix("TabLine")
-		require("transparent").clear_prefix("DevIcon")
 
 		-- depends on pc, these settings are needed
-        vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
+    vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
+    -- vim.api.nvim_set_hl(0, "DevIconLua", { bg = "none" })
 		vim.cmd("highlight Normal guibg=NONE")
 		vim.cmd("highlight Lualine guibg=NONE")
 		vim.cmd("highlight Lualine guifg=NONE")

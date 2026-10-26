@@ -15,11 +15,9 @@ return {
 			tabpages = true,
 			clickable = true,
 			preset = "powerline",
-			highlight_current_file_icons = true,
-			highlight_inactive_file_icons = true,
 			hl = "MarkviewPalette0Fg",
 			icons = {
-				filetype = { custom_colors = false },
+				filetype = { custom_colors = true },
 				separator = { left = "", right = "" },
 				separator_at_end = false,
 				inactive = { separator = { left = "", right = "" } },
