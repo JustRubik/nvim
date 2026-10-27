@@ -9,7 +9,13 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls" },
+				ensure_installed = { 
+          "lua_ls",
+          "ts_ls",
+          "eslint",
+          "clangd",
+          -- "neocmakelsp",
+        },
 			})
 		end,
 	},
@@ -138,10 +144,10 @@ return {
 			}
 			vim.lsp.enable("clangd")
 			-- cmake
-			lspconfig["cmake"] = {
+			lspconfig["neocmakelsp"] = {
 				capabilities = capabilities,
 			}
-			vim.lsp.enable("cmake")
+			vim.lsp.enable("neocmakelsp")
 			-- marksman
 			lspconfig["marksman"] = {
 				capabilities = capabilities,
