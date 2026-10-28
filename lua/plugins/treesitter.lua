@@ -19,7 +19,6 @@ return {
 				"html",
 				"go",
 				"marksman",
-				"asm-lsp",
 			},
 			sync_install = false,
 			highlight = { enable = true },
