@@ -19,7 +19,7 @@ return {
 		local cond = require("nvim-autopairs.conds")
 
 		local brackets = { { "(", ")" }, { "[", "]" }, { "{", "}" } }
-        npairs.setup(opts)
+		npairs.setup(opts)
 		npairs.add_rules({
 			-- Rule for a pair with left-side ' ' and right side ' '
 			Rule(" ", " ")

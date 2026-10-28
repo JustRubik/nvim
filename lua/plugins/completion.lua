@@ -65,10 +65,9 @@ return {
 					{ name = "ts_ls" },
 					{ name = "gopls" },
 					{ name = "clangd" },
-          { name = "cmake" },
+					{ name = "cmake" },
 				}),
 			})
 		end,
 	},
 }
-

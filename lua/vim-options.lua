@@ -13,10 +13,10 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = {"markdown", "html", "typst", "asciidoc"},
-    callback = function()
-        vim.opt_local.wrap = false
-    end,
+	pattern = { "markdown", "html", "typst", "asciidoc" },
+	callback = function()
+		vim.opt_local.wrap = false
+	end,
 })
 
 -- move selected lines
@@ -68,17 +68,17 @@ vim.keymap.set("n", "<A-j>", ":resize -1<CR>")
 
 -- Kiểm tra nếu đang chạy trên Windows
 if vim.fn.has("win32") == 1 then
-    -- Ưu tiên pwsh (PowerShell Core) nếu có, nếu không thì dùng powershell mặc định
-    local powershell_exe = vim.fn.executable("pwsh") == 1 and "pwsh" or "powershell"
+	-- Ưu tiên pwsh (PowerShell Core) nếu có, nếu không thì dùng powershell mặc định
+	local powershell_exe = vim.fn.executable("pwsh") == 1 and "pwsh" or "powershell"
 
-    vim.opt.shell = powershell_exe
-    vim.opt.shellcmdflag = "-NoLogo -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
-    vim.opt.shellredir = "2>&1 | Out-File -Encoding UTF8 %s"
-    vim.opt.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s"
-    vim.opt.shellquote = ""
-    vim.opt.shellxquote = ""
+	vim.opt.shell = powershell_exe
+	vim.opt.shellcmdflag =
+		"-NoLogo -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
+	vim.opt.shellredir = "2>&1 | Out-File -Encoding UTF8 %s"
+	vim.opt.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s"
+	vim.opt.shellquote = ""
+	vim.opt.shellxquote = ""
 end
-
 
 -- start barbar config
 -- next/prev buffer
@@ -93,6 +93,6 @@ vim.keymap.set({ "n", "t" }, "<C-t>q", "<CMD>:BufferClose!<CR>", {})
 
 vim.keymap.set("n", "<leader>vt", ":ShowTree<CR>", { desc = "Show directory tree in floating window" })
 
-
-
 vim.keymap.set("n", "<leader>xx", ":q<CR>", {})
+
+-- Mermaid
