@@ -14,8 +14,8 @@ return {
 					"ts_ls",
 					"eslint",
 					"clangd",
-          -- "cmake-language-server",
 					"neocmake",
+					"texlab",
 				},
 			})
 		end,
@@ -162,6 +162,25 @@ return {
 				capabilities = capabilities,
 			}
 			vim.lsp.enable("asm-lsp")
+
+			-- texlab
+			lspconfig["texlab"] = {
+				capabilities = capabilities,
+				settings = {
+					texlab = {
+            build = {
+              onSave = false,
+            },
+						chktex = {
+							onOpenAndSave = true,
+							onEdit = true,
+						},
+						diagnosticsDelay = 300,
+            latexFormatter = "latexindent",
+					},
+				},
+			}
+			vim.lsp.enable("texlab")
 
 			-- lsp kepmap setting
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
