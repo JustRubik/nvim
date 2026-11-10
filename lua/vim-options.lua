@@ -16,6 +16,7 @@ vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "markdown", "html", "typst", "asciidoc" },
 	callback = function()
 		vim.opt_local.wrap = false
+    vim.opt_local.modeline = false
 	end,
 })
 
