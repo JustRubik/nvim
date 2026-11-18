@@ -8,22 +8,8 @@ return {
 	-- },
 	--
 	config = function()
-		-- default
-		vim.cmd("Markview enable")
-		-- vim.cmd("set nowrap")
-
-		local function toggle_markview()
-			if require("markview").enable then
-				vim.cmd("Markview disable")
-				vim.cmd("set wrap")
-			else
-				vim.cmd("Markview enable")
-				vim.cmd("set nowrap")
-			end
-		end
-
-		vim.keymap.set("n", "<leader>m", toggle_markview, {
-			desc = "Toggle Markview",
-		})
+    vim.keymap.set("n", "<leader>m", "<CMD>Markview toggle<CR>", {
+      desc = "Toggle Markview",
+    })
 	end,
 }
