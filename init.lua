@@ -22,4 +22,7 @@ require("lazy").setup("plugins")
 --require("lazy").setup("plugins", lazy_opts)
 --require("snipets")
 
-lang_switch = require("vim-helpers.lang-switch").setup()
+for _, file in ipairs(vim.fn.glob("./lua/vim-helpers" .. "/*.lua", false, true)) do
+    local module = "vim-helpers." .. vim.fn.fnamemodify(file, ":t:r")
+    require(module).setup()
+end
